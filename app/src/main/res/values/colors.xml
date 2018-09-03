@@ -6,4 +6,5 @@
     <color name="colorFondo">#ff9900</color>
     <color name="colorLabel">#ffff00</color>
     <color name="colorBotonIngresar">#085394</color>
+    <color name="colorBoton">#ffff00</color>
 </resources>
