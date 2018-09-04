@@ -17,6 +17,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        tipoPerfil();
+
+        ingresar = (Button)findViewById(R.id.botonIngresar);
+        ingresar.setOnClickListener(this);
     }
 
     @Override
@@ -25,8 +30,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         switch (view.getId()){
             case R.id.botonIngresar : verificar(intent);
         }
-        startActivity(intent);
-        finish();
     }
 
     /**
@@ -38,6 +41,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         switch (perfil){
             case 1 : intent = new Intent(Login.this, Apoderado.class);
         }
+        startActivity(intent);
+        finish();
     }
 
     /**
@@ -50,6 +55,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
         if(bun != null){
             perfil = (int)bun.get("perfil");
+            System.out.println("entrarreh");
         }
     }
 }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondo"
+    tools:context=".Salida">
+
+    <Button
+        android:id="@+id/botonSalida"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="163dp"
+        android:background="@color/colorBotonSalida"
+        android:drawableLeft="@drawable/permitir_salida"
+        android:text="Permitir Salida"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/botonPermitirMovilidad"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="74dp"
+        android:background="@color/colorBotonMovilidad"
+        android:drawableLeft="@drawable/movilidad"
+        android:text="Permitir Movilidad"
+        android:textAllCaps="false" />
+
+    <ImageView
+        android:id="@+id/fotoHijoSalida"
+        android:layout_width="185dp"
+        android:layout_height="179dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        app:srcCompat="@drawable/inicio" />
+</RelativeLayout>

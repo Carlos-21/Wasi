@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".Perfil" />
         <activity android:name=".Login" />
-        <activity android:name=".Apoderado"></activity>
+        <activity android:name=".Apoderado" />
+        <activity android:name=".HijoApoderado" />
+        <activity android:name=".Salida"></activity>
     </application>
 
 </manifest>
