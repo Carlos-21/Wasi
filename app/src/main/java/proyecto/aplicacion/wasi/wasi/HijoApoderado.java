@@ -18,6 +18,8 @@ public class HijoApoderado extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hijo_apoderado);
 
+        setTitle(R.string.cHijos);
+
         lista = (RecyclerView) findViewById(R.id.listaHijo);
         lista.setHasFixedSize(true);
 
@@ -36,6 +38,5 @@ public class HijoApoderado extends AppCompatActivity implements View.OnClickList
         Intent intent = new Intent(HijoApoderado.this, Salida.class);
         intent.putExtra("foto", Hijo.listarHijos().get(lista.getChildAdapterPosition(view)).getNombre() + " " + Hijo.listarHijos().get(lista.getChildAdapterPosition(view)).getApellido());
         startActivity(intent);
-        finish();
     }
 }

@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Apoderado2"
     android:background="@color/colorFondo"
-    tools:context=".Apoderado">
+    tools:showIn="@layout/app_bar_apoderado2">
 
     <Button
         android:id="@+id/botonPermitirSalida"
@@ -30,4 +32,5 @@
         android:drawableLeft="@drawable/perfil_recogedor"
         android:text="Asignar Recogedor"
         android:textAllCaps="false" />
+
 </RelativeLayout>

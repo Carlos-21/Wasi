@@ -9,26 +9,26 @@
 
     <EditText
         android:id="@+id/textoUsuario"
-        android:layout_width="wrap_content"
+        android:layout_width="229dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="91dp"
-        android:hint="Usuario"
+        android:layout_marginTop="133dp"
         android:drawableLeft="@drawable/usuario"
         android:ems="10"
+        android:hint="Usuario"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/textoClave"
-        android:layout_width="wrap_content"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="168dp"
-        android:hint="Contraseña"
+        android:layout_marginTop="220dp"
         android:drawableLeft="@drawable/llave"
         android:ems="10"
+        android:hint="Contraseña"
         android:inputType="textPassword" />
 
     <Button
@@ -37,10 +37,11 @@
         android:layout_height="36dp"
         android:layout_alignEnd="@+id/textoUsuario"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="224dp"
+        android:layout_marginBottom="262dp"
         android:background="@color/colorBotonIngresar"
         android:drawableLeft="@drawable/ingresar"
         android:text="Ingresar"
         android:textAllCaps="false"
-        android:textColor="@android:color/background_light" />
+        android:textColor="@android:color/background_light"
+        android:textSize="16sp" />
 </RelativeLayout>

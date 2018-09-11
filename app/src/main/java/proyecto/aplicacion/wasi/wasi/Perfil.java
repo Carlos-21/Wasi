@@ -16,6 +16,8 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
+        setTitle(R.string.cPerfil);
+
         botonApoderado = (Button)findViewById(R.id.botonApoderado);
         botonApoderado.setOnClickListener(this);
         botonMovilidad = (Button)findViewById(R.id.botonMovilidad);

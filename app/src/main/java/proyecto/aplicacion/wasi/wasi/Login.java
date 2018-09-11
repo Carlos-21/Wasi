@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import proyecto.aplicacion.wasi.wasi.Soporte.Mensaje;
 
 public class Login extends AppCompatActivity implements View.OnClickListener{
     private EditText usuario;
@@ -18,7 +21,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        setTitle(R.string.cLogin);
+
         tipoPerfil();
+
+        usuario = (EditText)findViewById(R.id.textoUsuario);
+        clave = (EditText)findViewById(R.id.textoClave);
 
         ingresar = (Button)findViewById(R.id.botonIngresar);
         ingresar.setOnClickListener(this);
@@ -39,10 +47,31 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
      */
     private void verificar(Intent intent){
         switch (perfil){
-            case 1 : intent = new Intent(Login.this, Apoderado.class);
+            case 1 : verificarUsuario(intent, 1);
         }
-        startActivity(intent);
-        finish();
+    }
+
+    /**
+     * Recibe el usuario y contraseña y comprueba si la persona se
+     * encuentra registrada
+     */
+    private void verificarUsuario(Intent intent, int tipoPerfil){
+        String usuario = this.usuario.getText().toString();
+        String clave = this.clave.getText().toString();
+
+        switch (tipoPerfil){
+            case 1 : if(usuario.equals("padre") && clave.equals("padre")){
+                        intent = new Intent(Login.this, Apoderado2.class);
+                        Toast.makeText(Login.this, Mensaje.mensajeUsuarioCorrecto, Toast.LENGTH_SHORT).show();
+                        startActivity(intent);
+                        finish();
+                     }
+                     else{
+                        Toast.makeText(Login.this, Mensaje.mensajeUsuarioIncorrecto, Toast.LENGTH_SHORT).show();
+                     }
+                     break;
+        }
+
     }
 
     /**

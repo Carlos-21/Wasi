@@ -10,26 +10,28 @@
     <Button
         android:id="@+id/botonSalida"
         android:layout_width="171dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="163dp"
+        android:layout_marginBottom="175dp"
         android:background="@color/colorBotonSalida"
         android:drawableLeft="@drawable/permitir_salida"
         android:text="Permitir Salida"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/botonPermitirMovilidad"
-        android:layout_width="169dp"
-        android:layout_height="wrap_content"
+        android:layout_width="171dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="74dp"
         android:background="@color/colorBotonMovilidad"
-        android:drawableLeft="@drawable/movilidad"
+        android:drawableLeft="@drawable/perfil_movilidad"
         android:text="Permitir Movilidad"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:textSize="16sp" />
 
     <ImageView
         android:id="@+id/fotoHijoSalida"

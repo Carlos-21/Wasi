@@ -15,6 +15,8 @@ public class Apoderado extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apoderado);
 
+        setTitle(R.string.cApoderado); //En la versión final deberá salir el nombre del padre o madre
+
         permitirSalida = (Button)findViewById(R.id.botonPermitirSalida);
         permitirSalida.setOnClickListener(this);
         asignarRecogedor = (Button)findViewById(R.id.botonAsignarRecogedor);
