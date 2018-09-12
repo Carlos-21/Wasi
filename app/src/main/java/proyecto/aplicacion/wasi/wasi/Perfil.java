@@ -41,6 +41,5 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
                                         break;
         }
         startActivity(intent);
-        finish();
     }
 }

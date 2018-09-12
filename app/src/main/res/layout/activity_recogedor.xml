@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondo"
+    tools:context=".Recogedor">
+
+    <EditText
+        android:id="@+id/textoUsuarioRecogedor"
+        android:layout_width="229dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="133dp"
+        android:drawableLeft="@drawable/usuario"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/textoClaveRecogedor"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp"
+        android:drawableLeft="@drawable/llave"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/botonConfirmarRecogedor"
+        android:layout_width="115dp"
+        android:layout_height="40dp"
+        android:layout_alignEnd="@+id/textoUsuarioRecogedor"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="262dp"
+        android:background="@color/colorBotonConfirmar"
+        android:drawableLeft="@drawable/confirmar"
+        android:text="Confirmar"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="16sp" />
+
+</RelativeLayout>

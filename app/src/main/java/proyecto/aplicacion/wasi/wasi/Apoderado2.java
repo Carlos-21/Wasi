@@ -1,9 +1,11 @@
 package proyecto.aplicacion.wasi.wasi;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+
+import proyecto.aplicacion.wasi.wasi.Soporte.Mensaje;
 
 public class Apoderado2 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -59,7 +63,7 @@ public class Apoderado2 extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.apoderado2, menu);
+        //getMenuInflater().inflate(R.menu.apoderado2, menu);
         return true;
     }
 
@@ -93,8 +97,7 @@ public class Apoderado2 extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
 
         }  else if (id == R.id.cerrarSesion) {
-            Intent intent = new Intent(Apoderado2.this, Login.class);
-            startActivity(intent);
+            cerrarSesion();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -108,7 +111,41 @@ public class Apoderado2 extends AppCompatActivity
         switch (view.getId()){
             case R.id.botonPermitirSalida : intent = new Intent(Apoderado2.this, HijoApoderado.class);
                 break;
+            case R.id.botonAsignarRecogedor : intent = new Intent(Apoderado2.this, Recogedor.class);
+                break;
         }
         startActivity(intent);
+    }
+
+    /**
+     * Método que se encargará de verificar si el usuario desea cerrar sessión,
+     * de ser ser afirmativo se mostrará la actividad de perfiles
+     */
+    private void cerrarSesion(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(Apoderado2.this);
+        builder.setTitle(Mensaje.tituloCerrarSesion);
+        builder.setMessage(Mensaje.mensajeCerrarSesion);
+        builder.setCancelable(false);
+        builder.setIcon(R.drawable.informacion);
+
+        builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent = new Intent(Apoderado2.this, Perfil.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //No se hace nada
+                dialogInterface.cancel();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

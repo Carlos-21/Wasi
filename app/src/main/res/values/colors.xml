@@ -10,4 +10,5 @@
     <color name="colorTitulo">#4b3621</color>
     <color name="colorBotonSalida">#9fc5f8</color>
     <color name="colorBotonMovilidad">#b6d7a8</color>
+    <color name="colorBotonConfirmar">#085394</color>
 </resources>

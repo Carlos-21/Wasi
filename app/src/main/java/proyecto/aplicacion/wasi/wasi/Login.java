@@ -48,6 +48,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     private void verificar(Intent intent){
         switch (perfil){
             case 1 : verificarUsuario(intent, 1);
+                     break;
+            case 2 : verificarUsuario(intent, 2);
+                     break;
         }
     }
 
@@ -58,18 +61,32 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     private void verificarUsuario(Intent intent, int tipoPerfil){
         String usuario = this.usuario.getText().toString();
         String clave = this.clave.getText().toString();
-
+        System.out.println("Número switch : "+tipoPerfil);
         switch (tipoPerfil){
             case 1 : if(usuario.equals("padre") && clave.equals("padre")){
+                System.out.println("1P");
                         intent = new Intent(Login.this, Apoderado2.class);
                         Toast.makeText(Login.this, Mensaje.mensajeUsuarioCorrecto, Toast.LENGTH_SHORT).show();
                         startActivity(intent);
                         finish();
                      }
                      else{
+                System.out.println("2P");
                         Toast.makeText(Login.this, Mensaje.mensajeUsuarioIncorrecto, Toast.LENGTH_SHORT).show();
                      }
                      break;
+            case 2 : if(usuario.equals("movilidad") && clave.equals("movilidad")){
+                        System.out.println("3M");
+                        intent = new Intent(Login.this, Movilidad.class);
+                        Toast.makeText(Login.this, Mensaje.mensajeUsuarioCorrecto, Toast.LENGTH_SHORT).show();
+                        startActivity(intent);
+                        finish();
+                    }
+                    else{
+                System.out.println("4M");
+                        Toast.makeText(Login.this, Mensaje.mensajeUsuarioIncorrecto, Toast.LENGTH_SHORT).show();
+                    }
+                    break;
         }
 
     }
@@ -84,7 +101,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
         if(bun != null){
             perfil = (int)bun.get("perfil");
-            System.out.println("entrarreh");
+            System.out.println("Numero : "+perfil);
         }
     }
 }

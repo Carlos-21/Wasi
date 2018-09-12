@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/icono"
+        android:icon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/icono"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Principal">
@@ -17,9 +17,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".Perfil" />
-        <activity android:name=".Login" />
+        <activity
+            android:name=".Login"
+            android:parentActivityName=".Perfil">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Perfil" />
+        </activity>
         <activity android:name=".Apoderado" />
-        <activity android:name=".HijoApoderado"
+        <activity
+            android:name=".HijoApoderado"
             android:parentActivityName=".Apoderado2">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -35,7 +42,23 @@
         <activity
             android:name=".Apoderado2"
             android:label="@string/title_activity_apoderado2"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Movilidad"
+            android:label="@string/title_activity_movilidad"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Recogedor"
+            android:parentActivityName=".Apoderado2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Apoderado2" />
+        </activity>
+        <activity android:name=".Recogedor2"
+            android:parentActivityName=".Apoderado2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Apoderado2" />
+
         </activity>
     </application>
 
