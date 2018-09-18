@@ -7,6 +7,7 @@
         android:icon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Principal">
@@ -47,18 +48,25 @@
             android:name=".Movilidad"
             android:label="@string/title_activity_movilidad"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Recogedor"
+        <activity
+            android:name=".Recogedor"
             android:parentActivityName=".Apoderado2">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Apoderado2" />
         </activity>
-        <activity android:name=".Recogedor2"
+        <activity
+            android:name=".Recogedor2"
             android:parentActivityName=".Apoderado2">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Apoderado2" />
-
+        </activity>
+        <activity android:name=".SalidaPermitida"
+            android:parentActivityName=".HijoApoderado">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HijoApoderado" />
         </activity>
     </application>
 

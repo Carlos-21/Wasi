@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import proyecto.aplicacion.wasi.wasi.Soporte.Mensaje;
@@ -14,6 +16,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     private EditText usuario;
     private EditText clave;
     private Button ingresar;
+    private TextView labelLogin;
+    private ImageView imagenLoginPerfil;
     private int perfil;
 
     @Override
@@ -23,13 +27,18 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
         setTitle(R.string.cLogin);
 
-        tipoPerfil();
+        labelLogin = (TextView)findViewById(R.id.labelPerfil);
+        imagenLoginPerfil = (ImageView)findViewById(R.id.imagenLoginPerfil);
 
         usuario = (EditText)findViewById(R.id.textoUsuario);
         clave = (EditText)findViewById(R.id.textoClave);
 
         ingresar = (Button)findViewById(R.id.botonIngresar);
         ingresar.setOnClickListener(this);
+
+        tipoPerfil();
+
+
     }
 
     @Override
@@ -61,29 +70,24 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     private void verificarUsuario(Intent intent, int tipoPerfil){
         String usuario = this.usuario.getText().toString();
         String clave = this.clave.getText().toString();
-        System.out.println("Número switch : "+tipoPerfil);
         switch (tipoPerfil){
             case 1 : if(usuario.equals("padre") && clave.equals("padre")){
-                System.out.println("1P");
-                        intent = new Intent(Login.this, Apoderado2.class);
+                        intent = new Intent(Login.this, Apoderado.class);
                         Toast.makeText(Login.this, Mensaje.mensajeUsuarioCorrecto, Toast.LENGTH_SHORT).show();
                         startActivity(intent);
                         finish();
                      }
                      else{
-                System.out.println("2P");
                         Toast.makeText(Login.this, Mensaje.mensajeUsuarioIncorrecto, Toast.LENGTH_SHORT).show();
                      }
                      break;
             case 2 : if(usuario.equals("movilidad") && clave.equals("movilidad")){
-                        System.out.println("3M");
                         intent = new Intent(Login.this, Movilidad.class);
                         Toast.makeText(Login.this, Mensaje.mensajeUsuarioCorrecto, Toast.LENGTH_SHORT).show();
                         startActivity(intent);
                         finish();
                     }
                     else{
-                System.out.println("4M");
                         Toast.makeText(Login.this, Mensaje.mensajeUsuarioIncorrecto, Toast.LENGTH_SHORT).show();
                     }
                     break;
@@ -101,7 +105,18 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
         if(bun != null){
             perfil = (int)bun.get("perfil");
-            System.out.println("Numero : "+perfil);
+
+            switch (perfil){
+                case 1 : labelLogin.setText("Apoderado");
+                         imagenLoginPerfil.setBackground(getApplicationContext().getDrawable(R.drawable.wasi5_login));
+                         break;
+                case 2 : labelLogin.setText("Movilidad");
+                         imagenLoginPerfil.setBackground(getApplicationContext().getDrawable(R.drawable.perfil_movilidad2));
+                         break;
+                case 3 : labelLogin.setText("Recogedor");
+                         imagenLoginPerfil.setBackground(getApplicationContext().getDrawable(R.drawable.perfil_recogedor2));
+                         break;
+            }
         }
     }
 }

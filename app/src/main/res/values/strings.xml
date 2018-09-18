@@ -18,4 +18,5 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="cMovilidad">Movilidad</string>
     <string name="cRecogedor">Recogedor</string>
+    <string name="cerrarSesion">Cerrar Sesión</string>
 </resources>
